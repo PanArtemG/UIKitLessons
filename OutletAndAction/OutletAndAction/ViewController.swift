@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var Label: UILabel!
+    
+    @IBAction func SayInConsole(_ sender: UIButton) {
+        
+        print("Hello World in console")
     }
-
-
+    @IBAction func changeTextInLabel(_ sender: UIButton) {
+        Label.text = "Hello World!!!"
+    }
 }
-

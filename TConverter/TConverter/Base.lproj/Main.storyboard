@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" image="After" translatesAutoresizingMaskIntoConstraints="NO" id="Fut-C4-4wg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="After" translatesAutoresizingMaskIntoConstraints="NO" id="Fut-C4-4wg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="ee9-8h-g9A"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="D1v-oX-KhR">
@@ -31,6 +30,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zoV-YK-DEO">
                                         <rect key="frame" x="-2" y="124" width="278" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="274" id="xeY-RR-7SN"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="o0q-35-AWh"/>
                                         </connections>
@@ -55,11 +57,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Fut-C4-4wg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3kG-A5-udI"/>
+                            <constraint firstItem="Fut-C4-4wg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Sh-MZ-EZK"/>
                             <constraint firstItem="D1v-oX-KhR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6bv-Sk-TWg"/>
                             <constraint firstItem="D1v-oX-KhR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Jag-AO-fqj"/>
                             <constraint firstItem="pLh-gx-jmB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LUb-Ff-R0V"/>
                             <constraint firstItem="pLh-gx-jmB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="RnT-Vx-UGN"/>
                             <constraint firstItem="pLh-gx-jmB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cP5-DR-sm2" secondAttribute="trailing" constant="30" id="b07-DZ-y3B"/>
+                            <constraint firstItem="Fut-C4-4wg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cZi-9F-aII"/>
+                            <constraint firstItem="Fut-C4-4wg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eK7-GR-AMp"/>
                             <constraint firstItem="D1v-oX-KhR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="eYS-7K-ys3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D1v-oX-KhR" secondAttribute="trailing" constant="35" id="mNl-az-NYd"/>
                             <constraint firstItem="pLh-gx-jmB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sSE-AA-BZ8"/>

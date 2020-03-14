@@ -47,15 +47,41 @@
                                     <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="L5M-qH-iNx"/>
                                 </connections>
                             </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-V6-uG4">
+                                <rect key="frame" x="71" y="481" width="272" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="aZR-zi-w3F"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="272" id="cQT-9Q-Kpn"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzy-FC-mJN">
+                                <rect key="frame" x="71.5" y="600" width="271" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0wA-Gb-HrD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="271" id="Jla-4a-dXK"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NcF-bh-ZMh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zi4-mv-G34" secondAttribute="trailing" constant="72" id="5nN-16-dFV"/>
+                            <constraint firstItem="rzy-FC-mJN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7qY-3Q-Bky"/>
                             <constraint firstItem="IGh-Rd-Rqc" firstAttribute="top" secondItem="Zi4-mv-G34" secondAttribute="bottom" constant="149" id="95x-Nq-NLh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fKa-V6-uG4" secondAttribute="trailing" constant="71" id="A61-iT-0Jt"/>
+                            <constraint firstItem="fKa-V6-uG4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="DDZ-DW-jgK"/>
                             <constraint firstItem="AWw-hA-RiI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="Fxt-KX-Bib"/>
                             <constraint firstItem="Zi4-mv-G34" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="JEB-nU-Rer"/>
                             <constraint firstItem="Zi4-mv-G34" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="MAl-41-WxF"/>
                             <constraint firstItem="AWw-hA-RiI" firstAttribute="top" secondItem="IGh-Rd-Rqc" secondAttribute="bottom" constant="55" id="PPA-0A-BJx"/>
+                            <constraint firstItem="fKa-V6-uG4" firstAttribute="top" secondItem="AWw-hA-RiI" secondAttribute="bottom" constant="87" id="bCb-83-Dpr"/>
+                            <constraint firstItem="rzy-FC-mJN" firstAttribute="top" secondItem="fKa-V6-uG4" secondAttribute="bottom" constant="85" id="fgz-Aw-lYb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IGh-Rd-Rqc" secondAttribute="trailing" constant="72" id="lAZ-gI-xLs"/>
                             <constraint firstItem="IGh-Rd-Rqc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="ruw-F6-7px"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AWw-hA-RiI" secondAttribute="trailing" constant="71" id="ufc-HG-QdI"/>
@@ -66,11 +92,12 @@
                         <outlet property="label" destination="IGh-Rd-Rqc" id="8Ca-Ka-RRa"/>
                         <outlet property="segmenedControl" destination="Zi4-mv-G34" id="BNR-RR-flQ"/>
                         <outlet property="slider" destination="AWw-hA-RiI" id="hta-Xg-3mA"/>
+                        <outlet property="textField" destination="fKa-V6-uG4" id="q3b-b7-kQ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-649" y="6"/>
+            <point key="canvasLocation" x="-803" y="-33"/>
         </scene>
     </scenes>
 </document>

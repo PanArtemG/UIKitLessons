@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmenedControl: UISegmentedControl!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var textField: UITextField!
     
     
     
@@ -61,6 +62,27 @@ class ViewController: UIViewController {
         let bgc = self.view.backgroundColor
         // withAlphaComponent(CGFloat(sender.value)) - свойство прозрачности фона екрана
         self.view.backgroundColor = bgc?.withAlphaComponent(CGFloat(sender.value))
+    }
+    
+    @IBAction func donePressed(_ sender: UIButton) {
+        
+        guard textField.text?.isEmpty == false else {return}
+        
+        if let _ = Double(textField.text!) {
+            let alert = UIAlertController(title: "Wrong format", message: "Please enter your name", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            // present - вызывает на екран предупреждение
+            present(alert, animated: true, completion: nil)
+            
+        } else {
+            label.text = textField.text
+            textField.text = nil
+        }
+        
+        
+        
     }
     
 }

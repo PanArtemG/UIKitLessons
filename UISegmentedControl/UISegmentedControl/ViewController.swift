@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var datePiker: UIDatePicker!
     
     
     
@@ -34,6 +35,8 @@ class ViewController: UIViewController {
         slider.minimumTrackTintColor = .yellow
         slider.maximumTrackTintColor = .red
         slider.thumbTintColor = .white
+        
+        datePiker.locale = Locale(identifier: "ru_RU")
     }
 
     @IBAction func choiceSegment(_ sender: UISegmentedControl) {
@@ -80,10 +83,21 @@ class ViewController: UIViewController {
             label.text = textField.text
             textField.text = nil
         }
-        
-        
-        
     }
+    
+    @IBAction func changeDate(_ sender: UIDatePicker) {
+        //  конст будет отображать формат даты
+        let dateFormatter = DateFormatter()
+        // настроиваем формат даты (полная)
+        dateFormatter.dateStyle = .full
+        // Переводим в формат RU
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        // значение присваиваем другой константе в строковом формате
+        let dateValue = dateFormatter.string(from: sender.date)
+        
+        label.text = dateValue
+    }
+    
     
 }
 

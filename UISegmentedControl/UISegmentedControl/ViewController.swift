@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var uiElements = [  "UISegmentedControl",
+                        "UILabel",
+                        "UISlider",
+                        "UITextField",
+                        "UIButton",
+                        "UIDatePicker",]
+    
+    var selectedElement: String?
 
     @IBOutlet weak var segmenedControl: UISegmentedControl!
     @IBOutlet weak var label: UILabel!
@@ -39,6 +48,58 @@ class ViewController: UIViewController {
         slider.thumbTintColor = .white
         
         datePiker.locale = Locale(identifier: "ru_RU")
+        
+        choiceElement()
+        
+        createToolbar()
+    }
+    // Скрыть все елементы
+    func hideAllElements() {
+        segmenedControl.isHidden = true
+        label.isHidden = true
+        slider.isHidden = true
+        doneButton.isHidden = true
+        datePiker.isHidden = true
+        
+    }
+    // Создаем UIPickerView
+    func choiceElement() {
+        let elementPicker = UIPickerView()
+        
+        // delegate - для пользования после чего подписываемся к протоколу внизу через extension
+        elementPicker.delegate = self
+        
+        textField.inputView = elementPicker
+        
+        //Делаем кастомизацию
+        elementPicker.backgroundColor = .brown
+        
+    }
+    // Создаем екзкмпляр класса UIToolbar
+    func createToolbar() {
+        let toolbar = UIToolbar()
+        // по размеру view
+        toolbar.sizeToFit()
+        // создаем doneButton
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(dismissKeyboard))
+        // setItems - размещаем кнопку (можно и несколько обьектов в масииве)
+        toolbar.setItems([doneButton], animated: true)
+        // разрешаем взаимодействи епользователя
+        toolbar.isUserInteractionEnabled = true
+        //при тапе наtextField мы встраиваем тулбар над клавиатурой
+        textField.inputAccessoryView = toolbar
+        
+        //Делаем кастомизацию tintColor - text color
+        toolbar.tintColor = .white
+        //цвет заливки
+        toolbar.barTintColor = .brown
+    }
+    // @objc - для того что мог использовать селектор екшена // скрываем клаву
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     @IBAction func choiceSegment(_ sender: UISegmentedControl) {
@@ -114,8 +175,69 @@ class ViewController: UIViewController {
         } else {
             switchLabel.text = "Show all elements"
         }
-        
     }
+    
+    
     
 }
 
+extension ViewController:  UIPickerViewDelegate, UIPickerViewDataSource {
+    // количество барабанов
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    // количество доступных елементов в UIPickerView (задаем количество длинной массива)
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return uiElements.count
+    }
+    // Отбражает тайтл для каждого ров
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return uiElements[row]
+    }
+    // Позволяет работать с выбраным елементом
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int,  inComponent component: Int) {
+        selectedElement = uiElements[row]
+        textField.text = selectedElement
+        
+        switch row {
+            case 0:
+                hideAllElements()
+                segmenedControl.isHidden = false
+            case 1:
+                hideAllElements()
+                label.isHidden = false
+            case 2:
+                hideAllElements()
+                slider.isHidden = false
+            case 3:
+                hideAllElements()
+            case 4:
+                hideAllElements()
+                doneButton.isHidden = false
+            case 5:
+                hideAllElements()
+                datePiker.isHidden = false
+            default:
+                hideAllElements()
+        }
+    }
+    // Функция позволяет работать со свойствами лайблев в pickerView
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        var pickerViewLabel = UILabel()
+        
+        if let currentLabel = view as? UILabel {
+            pickerViewLabel = currentLabel
+        } else {
+            pickerViewLabel = UILabel()
+        }
+        
+        pickerViewLabel.textColor = .white
+        pickerViewLabel.textAlignment = .center
+        pickerViewLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 23)
+        pickerViewLabel.text = uiElements[row]
+        
+        return pickerViewLabel
+    }
+    
+}

@@ -34,13 +34,21 @@ The appearance of the keyboard itself can be customized using the properties pro
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BIH-fm-7MG">
+                                <rect key="frame" x="300" y="75" width="94" height="32"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="LhG-cb-Ich"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hkO-Ui-tuc" firstAttribute="width" secondItem="GlU-qc-P6w" secondAttribute="width" multiplier="0.112299" id="1jt-Lx-sKf"/>
                             <constraint firstItem="hkO-Ui-tuc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="37" id="FNQ-2c-kIt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GlU-qc-P6w" secondAttribute="trailing" constant="20" id="MVJ-Wd-qgL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BIH-fm-7MG" secondAttribute="trailing" constant="20" id="N0G-ym-mPg"/>
                             <constraint firstItem="GlU-qc-P6w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RGI-EK-Id1"/>
+                            <constraint firstItem="BIH-fm-7MG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="SVW-aT-93C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hkO-Ui-tuc" secondAttribute="trailing" constant="352" id="bQi-dr-snO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GlU-qc-P6w" secondAttribute="bottom" constant="236" id="lcS-hj-gVQ"/>
                             <constraint firstItem="hkO-Ui-tuc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="v2E-Qj-Gjk"/>
@@ -51,12 +59,13 @@ The appearance of the keyboard itself can be customized using the properties pro
                     <connections>
                         <outlet property="bottomConstr" destination="lcS-hj-gVQ" id="Rmt-c3-gn7"/>
                         <outlet property="countLabel" destination="hkO-Ui-tuc" id="gHx-F3-8pz"/>
+                        <outlet property="stepper" destination="BIH-fm-7MG" id="7p0-so-SF8"/>
                         <outlet property="textView" destination="GlU-qc-P6w" id="hzx-Iu-osT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+            <point key="canvasLocation" x="-297" y="96"/>
         </scene>
     </scenes>
 </document>

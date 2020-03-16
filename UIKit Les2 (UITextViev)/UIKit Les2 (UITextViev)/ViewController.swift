@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstr: NSLayoutConstraint!
+    @IBOutlet weak var stepper: UIStepper!
     
     
     
@@ -23,13 +24,21 @@ class ViewController: UIViewController {
         //    класс делегатом свойста textView и подписаться под протокол UITextViewDelegate
         textView.delegate = self
         
-        textView.text = ""
+//        textView.text = ""
         
         //Меняем шрифт
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         textView.backgroundColor = self.view.backgroundColor
         // BoprderRadius
         textView.layer.cornerRadius = 10
+        
+//        stepper.value = 17
+//        stepper.minimumValue = 10
+//        stepper.maximumValue = 25
+        
+        stepper.tintColor = .white // цвета кнопок
+        stepper.backgroundColor = .gray
+        stepper.layer.cornerRadius = 5
         
         // Делаем двух наблюдателей (addObserver) которые будут следить за появлением и скрыванием клавы
         NotificationCenter.default.addObserver(self,
@@ -73,7 +82,14 @@ class ViewController: UIViewController {
         //textView.resignFirstResponder()
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
-
+    @IBAction func sizeFont(_ sender: UIStepper) {
+        
+        let font = textView.font?.fontName
+        let fontSize = CGFloat(sender.value) // приводим к CGFloat
+        
+        textView.font = UIFont(name: font!, size: fontSize)
+    }
+    
 }
 
 extension ViewController: UITextViewDelegate {

@@ -27,8 +27,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var datePiker: UIDatePicker!
     @IBOutlet weak var switchLabel: UILabel!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +51,7 @@ class ViewController: UIViewController {
         
         createToolbar()
     }
+    
     // Скрыть все елементы
     func hideAllElements() {
         segmenedControl.isHidden = true
@@ -62,6 +61,7 @@ class ViewController: UIViewController {
         datePiker.isHidden = true
         
     }
+    
     // Создаем UIPickerView
     func choiceElement() {
         let elementPicker = UIPickerView()
@@ -75,6 +75,7 @@ class ViewController: UIViewController {
         elementPicker.backgroundColor = .brown
         
     }
+    
     // Создаем екзкмпляр класса UIToolbar
     func createToolbar() {
         let toolbar = UIToolbar()
@@ -85,18 +86,23 @@ class ViewController: UIViewController {
                                          style: .plain,
                                          target: self,
                                          action: #selector(dismissKeyboard))
+        
         // setItems - размещаем кнопку (можно и несколько обьектов в масииве)
         toolbar.setItems([doneButton], animated: true)
+        
         // разрешаем взаимодействи епользователя
         toolbar.isUserInteractionEnabled = true
+        
         //при тапе наtextField мы встраиваем тулбар над клавиатурой
         textField.inputAccessoryView = toolbar
         
         //Делаем кастомизацию tintColor - text color
         toolbar.tintColor = .white
+        
         //цвет заливки
         toolbar.barTintColor = .brown
     }
+    
     // @objc - для того что мог использовать селектор екшена // скрываем клаву
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -126,6 +132,7 @@ class ViewController: UIViewController {
         label.text = String(sender.value)
         
         let bgc = self.view.backgroundColor
+        
         // withAlphaComponent(CGFloat(sender.value)) - свойство прозрачности фона екрана
         self.view.backgroundColor = bgc?.withAlphaComponent(CGFloat(sender.value))
     }
@@ -139,6 +146,7 @@ class ViewController: UIViewController {
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(okAction)
+            
             // present - вызывает на екран предупреждение
             present(alert, animated: true, completion: nil)
             
@@ -149,12 +157,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeDate(_ sender: UIDatePicker) {
+        
         //  конст будет отображать формат даты
         let dateFormatter = DateFormatter()
+        
         // настроиваем формат даты (полная)
         dateFormatter.dateStyle = .full
+        
         // Переводим в формат RU
         dateFormatter.locale = Locale(identifier: "ru_RU")
+        
         // значение присваиваем другой константе в строковом формате
         let dateValue = dateFormatter.string(from: sender.date)
         
@@ -182,18 +194,22 @@ class ViewController: UIViewController {
 }
 
 extension ViewController:  UIPickerViewDelegate, UIPickerViewDataSource {
+    
     // количество барабанов
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     // количество доступных елементов в UIPickerView (задаем количество длинной массива)
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return uiElements.count
     }
+    
     // Отбражает тайтл для каждого ров
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return uiElements[row]
     }
+    
     // Позволяет работать с выбраным елементом
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int,  inComponent component: Int) {
         selectedElement = uiElements[row]
@@ -221,6 +237,7 @@ extension ViewController:  UIPickerViewDelegate, UIPickerViewDataSource {
                 hideAllElements()
         }
     }
+    
     // Функция позволяет работать со свойствами лайблев в pickerView
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         

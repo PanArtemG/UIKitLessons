@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomConstr: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var activityIndic: UIActivityIndicatorView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     
     
@@ -28,11 +29,12 @@ class ViewController: UIViewController {
 //        textView.text = ""
         
         textView.isHidden = true
-        textView.alpha = 0
+//        для крутилки
+//        textView.alpha = 0
         
         //Меняем шрифт
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
-//        textView.backgroundColor = self.view.backgroundColor
+        textView.backgroundColor = self.view.backgroundColor
         // BoprderRadius
         textView.layer.cornerRadius = 10
         
@@ -49,8 +51,9 @@ class ViewController: UIViewController {
         activityIndic.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         activityIndic.startAnimating()
         
+        progressView.setProgress(0, animated: true)
+        
         // Запрещает взаимодействе пользователя с app пока индикатор активен
-//        UIApplication.shared.beginIgnoringInteractionEvents()
         self.view.isUserInteractionEnabled = false
         
         // Делаем двух наблюдателей (addObserver) которые будут следить за появлением и скрыванием клавы
@@ -66,16 +69,30 @@ class ViewController: UIViewController {
         
         
         // !!!!!!!  АНИМАЦИЯ !!!!!!!!
+        
+        // Для крутилки!!!
         // withDuration - продолжительность
         // delay - задержка
         // options - выбираем анимацию
         // animations - что анимируем
-        UIView.animate(withDuration: 0, delay: 5, options: .curveEaseIn, animations: {
-            self.textView.alpha = 1
-        }) { (finised) in
-            self.activityIndic.stopAnimating()
-            self.textView.isHidden = false
-            self.view.isUserInteractionEnabled = true // отменяем отключенее взаимодействие
+//        UIView.animate(withDuration: 0, delay: 5, options: .curveEaseIn, animations: {
+//            self.textView.alpha = 1
+//        }) { (finised) in
+//            self.activityIndic.stopAnimating()
+//            self.textView.isHidden = false
+//            self.view.isUserInteractionEnabled = true // отменяем отключенее взаимодействие
+//        }
+        
+        // Для прогресс
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if self.progressView.progress != 1 {
+                self.progressView.progress += 0.2
+            } else {
+                self.activityIndic.stopAnimating()
+                self.textView.isHidden = false
+                self.view.isUserInteractionEnabled = true // отменяем отключенее взаимодействие
+                self.progressView.isHidden = true
+            }
         }
     }
     

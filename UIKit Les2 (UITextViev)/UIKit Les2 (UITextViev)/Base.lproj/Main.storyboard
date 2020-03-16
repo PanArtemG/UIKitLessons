@@ -40,9 +40,16 @@ The appearance of the keyboard itself can be customized using the properties pro
                                     <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="LhG-cb-Ich"/>
                                 </connections>
                             </stepper>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1l3-US-v2E">
-                                <rect key="frame" x="172" y="348" width="71" height="62"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1l3-US-v2E">
+                                <rect key="frame" x="171.5" y="348.5" width="71" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="1W9-Di-E7N"/>
+                                    <constraint firstAttribute="width" constant="71" id="WY3-O6-X7v"/>
+                                </constraints>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Y1p-Fp-xaU">
+                                <rect key="frame" x="20" y="133" width="374" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -52,10 +59,13 @@ The appearance of the keyboard itself can be customized using the properties pro
                             <constraint firstItem="hkO-Ui-tuc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="37" id="FNQ-2c-kIt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GlU-qc-P6w" secondAttribute="trailing" constant="20" id="MVJ-Wd-qgL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BIH-fm-7MG" secondAttribute="trailing" constant="20" id="N0G-ym-mPg"/>
+                            <constraint firstItem="Y1p-Fp-xaU" firstAttribute="width" secondItem="GlU-qc-P6w" secondAttribute="width" id="Qhs-pk-SmD"/>
                             <constraint firstItem="GlU-qc-P6w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RGI-EK-Id1"/>
                             <constraint firstItem="BIH-fm-7MG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="SVW-aT-93C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hkO-Ui-tuc" secondAttribute="trailing" constant="352" id="bQi-dr-snO"/>
+                            <constraint firstItem="Y1p-Fp-xaU" firstAttribute="centerX" secondItem="GlU-qc-P6w" secondAttribute="centerX" id="kKC-7C-HhC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GlU-qc-P6w" secondAttribute="bottom" constant="236" id="lcS-hj-gVQ"/>
+                            <constraint firstItem="Y1p-Fp-xaU" firstAttribute="top" secondItem="GlU-qc-P6w" secondAttribute="top" id="mnX-nq-joU"/>
                             <constraint firstItem="hkO-Ui-tuc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="v2E-Qj-Gjk"/>
                             <constraint firstItem="GlU-qc-P6w" firstAttribute="top" secondItem="hkO-Ui-tuc" secondAttribute="bottom" constant="31" id="wHu-UN-zHC"/>
                         </constraints>
@@ -65,13 +75,14 @@ The appearance of the keyboard itself can be customized using the properties pro
                         <outlet property="activityIndic" destination="1l3-US-v2E" id="OhJ-7A-jj0"/>
                         <outlet property="bottomConstr" destination="lcS-hj-gVQ" id="Rmt-c3-gn7"/>
                         <outlet property="countLabel" destination="hkO-Ui-tuc" id="gHx-F3-8pz"/>
+                        <outlet property="progressView" destination="Y1p-Fp-xaU" id="x9V-pd-sqO"/>
                         <outlet property="stepper" destination="BIH-fm-7MG" id="7p0-so-SF8"/>
                         <outlet property="textView" destination="GlU-qc-P6w" id="hzx-Iu-osT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297.10144927536237" y="95.758928571428569"/>
+            <point key="canvasLocation" x="-120.28985507246378" y="71.651785714285708"/>
         </scene>
     </scenes>
 </document>

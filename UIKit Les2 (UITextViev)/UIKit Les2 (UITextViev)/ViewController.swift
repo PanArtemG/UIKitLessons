@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstr: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var activityIndic: UIActivityIndicatorView!
     
     
     
@@ -26,19 +27,31 @@ class ViewController: UIViewController {
         
 //        textView.text = ""
         
+        textView.isHidden = true
+        textView.alpha = 0
+        
         //Меняем шрифт
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
-        textView.backgroundColor = self.view.backgroundColor
+//        textView.backgroundColor = self.view.backgroundColor
         // BoprderRadius
         textView.layer.cornerRadius = 10
         
-//        stepper.value = 17
-//        stepper.minimumValue = 10
-//        stepper.maximumValue = 25
+        stepper.value = 17
+        stepper.minimumValue = 10
+        stepper.maximumValue = 25
         
         stepper.tintColor = .white // цвета кнопок
         stepper.backgroundColor = .gray
-        stepper.layer.cornerRadius = 5
+        stepper.layer.cornerRadius = 8
+        
+        // По окончанию активности пропадает
+        activityIndic.hidesWhenStopped = true
+        activityIndic.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        activityIndic.startAnimating()
+        
+        // Запрещает взаимодействе пользователя с app пока индикатор активен
+//        UIApplication.shared.beginIgnoringInteractionEvents()
+        self.view.isUserInteractionEnabled = false
         
         // Делаем двух наблюдателей (addObserver) которые будут следить за появлением и скрыванием клавы
         NotificationCenter.default.addObserver(self,
@@ -50,6 +63,20 @@ class ViewController: UIViewController {
                                                selector: #selector(updateTextView(notification:)),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
+        
+        
+        // !!!!!!!  АНИМАЦИЯ !!!!!!!!
+        // withDuration - продолжительность
+        // delay - задержка
+        // options - выбираем анимацию
+        // animations - что анимируем
+        UIView.animate(withDuration: 0, delay: 5, options: .curveEaseIn, animations: {
+            self.textView.alpha = 1
+        }) { (finised) in
+            self.activityIndic.stopAnimating()
+            self.textView.isHidden = false
+            self.view.isUserInteractionEnabled = true // отменяем отключенее взаимодействие
+        }
     }
     
     @objc func updateTextView(notification: Notification) {

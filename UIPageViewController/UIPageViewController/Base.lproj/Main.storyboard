@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELKOM!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cr3-Z4-Vly">
+                                <rect key="frame" x="98" y="429" width="218" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cr3-Z4-Vly" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jYF-QK-Aoa"/>
+                            <constraint firstItem="Cr3-Z4-Vly" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="x5S-qE-LYN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-317" y="60"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="OR6-hD-703">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="dRF-ey-V69" customClass="PageViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cza-bV-2Yw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="60"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="i2L-DW-kTn">
+            <objects>
+                <viewController storyboardIdentifier="ContentViewController" id="euf-oT-acx" customClass="ContentViewController" customModule="UIPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Pt-Us-Npd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awasome Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGj-wL-s0N">
+                                <rect key="frame" x="20" y="154" width="374" height="38"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="30"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxX-hC-3ZB">
+                                <rect key="frame" x="153" y="393" width="108" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="n3Q-hi-K3X">
+                                <rect key="frame" x="187.5" y="825" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aGj-wL-s0N" firstAttribute="top" secondItem="O8m-6f-Xus" secondAttribute="top" constant="110" id="5D7-gt-Q7M"/>
+                            <constraint firstItem="aGj-wL-s0N" firstAttribute="leading" secondItem="O8m-6f-Xus" secondAttribute="leading" constant="20" id="ATE-tR-BjT"/>
+                            <constraint firstItem="wxX-hC-3ZB" firstAttribute="centerX" secondItem="O8m-6f-Xus" secondAttribute="centerX" id="EKl-RY-Owm"/>
+                            <constraint firstItem="O8m-6f-Xus" firstAttribute="trailing" secondItem="aGj-wL-s0N" secondAttribute="trailing" constant="20" id="SEM-sW-gQc"/>
+                            <constraint firstItem="O8m-6f-Xus" firstAttribute="bottom" secondItem="n3Q-hi-K3X" secondAttribute="bottom" id="i0I-mD-3pn"/>
+                            <constraint firstItem="wxX-hC-3ZB" firstAttribute="centerY" secondItem="O8m-6f-Xus" secondAttribute="centerY" id="qns-BO-zgb"/>
+                            <constraint firstItem="n3Q-hi-K3X" firstAttribute="centerX" secondItem="O8m-6f-Xus" secondAttribute="centerX" id="wWu-67-Sd5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O8m-6f-Xus"/>
+                    </view>
+                    <connections>
+                        <outlet property="emojiLabel" destination="wxX-hC-3ZB" id="d7K-o1-qmG"/>
+                        <outlet property="pageControl" destination="n3Q-hi-K3X" id="MsA-Rk-mgO"/>
+                        <outlet property="presentTextLabel" destination="aGj-wL-s0N" id="Ruf-EQ-h8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4f-qg-L0I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150.7246376811595" y="59.598214285714285"/>
+        </scene>
+    </scenes>
+</document>

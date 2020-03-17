@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AwasomeBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woa-1R-krI">
+                                <rect key="frame" x="0.0" y="86" width="414" height="810"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11q-fs-t4t">
+                                <rect key="frame" x="322" y="44" width="72" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Xjs-NM-m5x"/>
+                                </constraints>
+                                <state key="normal" title="Forward"/>
+                                <connections>
+                                    <action selector="forwardBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1x-GR-O7i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DE0-Pe-rVW">
+                                <rect key="frame" x="20" y="44" width="72" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="gjF-LC-cZK"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGu-n7-GGY"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOd-fL-pfU">
+                                <rect key="frame" x="97" y="44" width="220" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="jn3-OI-1Pp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="11q-fs-t4t" firstAttribute="leading" secondItem="qOd-fL-pfU" secondAttribute="trailing" constant="5" id="3wV-qo-MNf"/>
+                            <constraint firstItem="qOd-fL-pfU" firstAttribute="leading" secondItem="DE0-Pe-rVW" secondAttribute="trailing" constant="5" id="7RA-aN-X1o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="11q-fs-t4t" secondAttribute="trailing" constant="20" id="8Qm-fH-r9S"/>
+                            <constraint firstItem="DE0-Pe-rVW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JWh-Bf-PrN"/>
+                            <constraint firstItem="woa-1R-krI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NHy-4W-K9p"/>
+                            <constraint firstItem="11q-fs-t4t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="X7y-r2-JLC"/>
+                            <constraint firstItem="DE0-Pe-rVW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cIy-Ev-cg1"/>
+                            <constraint firstItem="DE0-Pe-rVW" firstAttribute="width" secondItem="11q-fs-t4t" secondAttribute="width" id="h7i-a9-bDJ"/>
+                            <constraint firstAttribute="bottom" secondItem="woa-1R-krI" secondAttribute="bottom" id="oNc-t9-f40"/>
+                            <constraint firstItem="woa-1R-krI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r5S-Kj-nlk"/>
+                            <constraint firstItem="woa-1R-krI" firstAttribute="top" secondItem="qOd-fL-pfU" secondAttribute="bottom" constant="8" id="uMy-3Z-0eB"/>
+                            <constraint firstItem="qOd-fL-pfU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yGX-uM-nb3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="DE0-Pe-rVW" id="NpL-Ip-nlf"/>
+                        <outlet property="forwardBtn" destination="11q-fs-t4t" id="MsY-uE-qo7"/>
+                        <outlet property="urlTextField" destination="qOd-fL-pfU" id="bgE-1W-hxe"/>
+                        <outlet property="webView" destination="woa-1R-krI" id="G6c-q5-2p2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.681159420289859" y="21.428571428571427"/>
+        </scene>
+    </scenes>
+</document>
